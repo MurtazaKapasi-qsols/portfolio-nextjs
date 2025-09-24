@@ -7,7 +7,7 @@ import PulsingElement from "./PulsingElement";
 
 export default function StatsSection() {
   const stats = [
-    { number: 15, suffix: "+", label: "YEARS OF EXPERIENCE" },
+    { number: 20, suffix: "+", label: "YEARS OF EXPERIENCE" },
     { number: 75, suffix: "+", label: "SATISFIED CUSTOMERS" },
     { number: 250, suffix: "+", label: "SUCCESSFUL PROJECTS" }
   ];
