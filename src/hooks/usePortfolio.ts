@@ -39,7 +39,7 @@ export const usePortfolio = (query: PortfolioQuery = {}): UsePortfolioReturn => 
 
   useEffect(() => {
     fetchProjects();
-  });
+  }, [JSON.stringify(query)]);
 
   return {
     projects,
