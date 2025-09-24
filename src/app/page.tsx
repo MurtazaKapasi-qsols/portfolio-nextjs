@@ -15,6 +15,7 @@ import TestimonialsSlide from "@/components/cms/TestimonialsSlide";
 export default function Home() {
   return (
     <main>
+      {/* Portfolio app ready for code review */}
       <HeroSection />
       <div className="h-[80px] text-center my-20">
         <Separator orientation="vertical" className=" mx-auto bg-black data-[orientation=vertical]:w-[2px]"/>
