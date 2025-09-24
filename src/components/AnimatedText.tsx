@@ -36,11 +36,7 @@ export default function AnimatedText({
     },
     visible: {
       opacity: 1,
-      y: 0,
-      transition: {
-        duration,
-        ease: "easeOut"
-      }
+      y: 0
     }
   };
 
@@ -56,6 +52,10 @@ export default function AnimatedText({
         <motion.span
           key={index}
           variants={item}
+          transition={{
+            duration,
+            ease: "easeOut"
+          }}
           className="inline-block mr-2"
         >
           {word}

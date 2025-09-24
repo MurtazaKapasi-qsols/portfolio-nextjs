@@ -32,11 +32,6 @@ export default function AnimatedSection({
       y: 0,
       x: 0,
       scale: 1,
-      transition: {
-        duration,
-        delay,
-        ease: "easeOut"
-      }
     }
   };
 
@@ -46,6 +41,11 @@ export default function AnimatedSection({
       variants={variants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
+      transition={{
+        duration,
+        delay,
+        ease: "easeOut"
+      }}
       className={className}
     >
       {children}
