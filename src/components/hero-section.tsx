@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { smoothScrollTo } from "@/lib/smooth-scroll";
-import AnimatedText from "./AnimatedText";
 
 export default function HeroSection() {
   const handleScrollDown = () => {

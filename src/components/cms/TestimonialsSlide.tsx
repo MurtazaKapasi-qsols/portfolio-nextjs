@@ -6,13 +6,12 @@ import SectionHeading from "../sectionHeading";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
-import WaveAnimation from "../WaveAnimation";
 import { ChevronLeft } from "lucide-react";
 import { ChevronRight } from "lucide-react";
 import { getOptimizedImageUrl } from "@/lib/contentful";
 
 export default function TestimonialsSlide() {
-	const { testimonials, loading, error } = useTestimonials();
+	const { testimonials, loading } = useTestimonials();
 	const [currentTestimonial, setCurrentTestimonial] = useState(0);
   
 	const nextTestimonial = () => {
@@ -30,7 +29,6 @@ export default function TestimonialsSlide() {
 
   const current = testimonials[currentTestimonial];
 	
-	console.log(current);
 	return (
 		<section className="py-20 bg-gray-900">
 			<div className="container">
@@ -88,7 +86,7 @@ export default function TestimonialsSlide() {
 									transition={{ duration: 0.5, ease: "easeInOut" }}
 								>
 									<blockquote className="text-white/90 text-lg md:text-xl leading-relaxed mb-8 italic min-h-[120px] flex items-center justify-center">
-										"{current.fields.content}"
+										&ldquo;{current.fields.content}&rdquo;
 									</blockquote>
 									<div className="mb-8">
 										<p className="text-white font-semibold text-lg">{current.fields.name}</p>

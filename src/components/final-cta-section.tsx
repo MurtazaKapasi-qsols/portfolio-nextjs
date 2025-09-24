@@ -5,7 +5,6 @@ import SectionHeading from "./sectionHeading";
 import { Button } from "./ui/button";
 import AnimatedSection from "./AnimatedSection";
 import PulsingElement from "./PulsingElement";
-import ContinuousFloating from "./ContinuousFloating";
 
 export default function FinalCtaSection() {
   return (

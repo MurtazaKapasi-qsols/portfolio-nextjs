@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import SectionHeading from "./sectionHeading";
 import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
-import FloatingElement from "./FloatingElement";
-import ContinuousFloating from "./ContinuousFloating";
 import BreathingElement from "./BreathingElement";
 import ShimmerEffect from "./ShimmerEffect";
 

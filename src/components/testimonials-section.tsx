@@ -6,8 +6,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import SectionHeading from "./sectionHeading";
 import AnimatedSection from "./AnimatedSection";
-import FloatingElement from "./FloatingElement";
-import ContinuousFloating from "./ContinuousFloating";
 import WaveAnimation from "./WaveAnimation";
 
 export default function TestimonialsSection() {
@@ -123,7 +121,7 @@ export default function TestimonialsSection() {
               >
                 <WaveAnimation intensity={3} duration={4}>
                   <blockquote className="text-white/90 text-lg md:text-xl leading-relaxed mb-8 italic min-h-[120px] flex items-center justify-center">
-                    "{current.quote}"
+                    &ldquo;{current.quote}&rdquo;
                   </blockquote>
                 </WaveAnimation>
                 <div className="mb-8">

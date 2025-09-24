@@ -1,11 +1,9 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import PulsingElement from "./PulsingElement";
-import ContinuousFloating from "./ContinuousFloating";
 
 export default function StatsSection() {
   const stats = [

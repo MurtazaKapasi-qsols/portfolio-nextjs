@@ -9,7 +9,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import AnimatedSection from "./AnimatedSection";
-import FloatingElement from "./FloatingElement";
 
 export default function ServicesSection() {
   const services = [

@@ -1,4 +1,4 @@
-import { Entry, Asset, EntryCollection, EntrySkeletonType } from 'contentful';
+import { Asset, EntryCollection, EntrySkeletonType } from 'contentful';
 
 // Base Contentful types
 export interface ContentfulAsset extends Asset {
@@ -76,7 +76,13 @@ export interface PortfolioProject {
   };
   fields: PortfolioProjectFields;
   metadata: {
-    tags: any[];
+    tags: Array<{
+      sys: {
+        type: 'Link';
+        linkType: 'Tag';
+        id: string;
+      };
+    }>;
   };
 }
 export interface Testimonials {
@@ -87,7 +93,7 @@ export interface Testimonials {
     revision: number;
     contentType: {
       sys: {
-        id: 'portfolioProjects';
+        id: 'testimonials';
         linkType: 'ContentType';
         type: 'Link';
       };
@@ -96,7 +102,13 @@ export interface Testimonials {
   };
   fields: TestimonialsFields;
   metadata: {
-    tags: any[];
+    tags: Array<{
+      sys: {
+        type: 'Link';
+        linkType: 'Tag';
+        id: string;
+      };
+    }>;
   };
 }
 

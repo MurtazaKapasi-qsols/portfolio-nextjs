@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import SectionHeading from "./sectionHeading";
 import AnimatedSection from "./AnimatedSection";
-import FloatingElement from "./FloatingElement";
 
 export default function PartnersSection() {
   const partnerImages = [

@@ -1,4 +1,4 @@
-import { createClient, Entry, Asset } from 'contentful';
+import { createClient, Asset } from 'contentful';
 
 // Contentful client configuration
 const client = createClient({

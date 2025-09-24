@@ -21,7 +21,7 @@ export default function PortfolioGrid({
   category, 
   featured 
 }: PortfolioGridProps) {
-  const { projects, loading, error } = usePortfolio({
+  const { projects, loading } = usePortfolio({
     limit,
     'fields.category': category,
     'fields.featured': featured,
@@ -43,26 +43,25 @@ export default function PortfolioGrid({
         </AnimatedSection>
 			</div>
 
-			<div className="columns-1 lg:columns-3 gap-6 max-w-6xl mx-auto">
-				{loading && (
-					<div className="columns-1 lg:columns-3 gap-6 max-w-6xl mx-auto">
-						{Array.from({ length: 6 }).map((_, index) => (
-							<div key={index} className="break-inside-avoid mb-6">
-								<div className="bg-gray-200 rounded-lg h-64 animate-pulse" />
-							</div>
-						))}
-					</div>
-				)}
-				{!loading && projects.length > 0 && (
-					projects.map((project, index) => (
+			{loading ? (
+				<div className="columns-1 lg:columns-3 gap-6 max-w-6xl mx-auto">
+					{Array.from({ length: 6 }).map((_, index) => (
+						<div key={index} className="break-inside-avoid mb-6">
+							<div className="bg-gray-200 rounded-lg h-64 animate-pulse" />
+						</div>
+					))}
+				</div>
+			) : (
+				<div className="columns-1 lg:columns-3 gap-6 max-w-6xl mx-auto">
+					{projects.map((project, index) => (
 						<PortfolioCard 
 							key={project.sys.id} 
 							project={project} 
 							index={index} 
 						/>
-					))
-				)}
-			</div>
+					))}
+				</div>
+			)}
 		</section>
       
   );
@@ -82,12 +81,11 @@ function PortfolioCard({ project, index }: PortfolioCardProps) {
     <>
 		
     <motion.div 
-        key={index} 
+        key={project.sys.id} 
         className="break-inside-avoid mb-6 group cursor-pointer"
         initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: index * 0.1 }}
-        viewport={{ once: true }}
         whileHover={{ y: -5 }}
     >
 			<BreathingElement intensity={0.01} duration={4}>
@@ -101,9 +99,12 @@ function PortfolioCard({ project, index }: PortfolioCardProps) {
 								<Image
 									src={imageUrl} 
 									alt={fields.title}
-									width={"353"}
-									height={"100"}
+									width={353}
+									height={100}
 									className="w-full h-auto object-cover"
+									loading="lazy"
+									placeholder="blur"
+									blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
 								/>
 							</motion.div>
 						</ShimmerEffect>

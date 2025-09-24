@@ -39,7 +39,7 @@ export const usePortfolio = (query: PortfolioQuery = {}): UsePortfolioReturn => 
 
   useEffect(() => {
     fetchProjects();
-  }, [JSON.stringify(query)]);
+  }, []);
 
   return {
     projects,
@@ -47,43 +47,4 @@ export const usePortfolio = (query: PortfolioQuery = {}): UsePortfolioReturn => 
     error,
     refetch: fetchProjects
   };
-};
-
-// Hook for getting a single project by slug
-export const usePortfolioProject = (slug: string) => {
-  const [project, setProject] = useState<PortfolioProject | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchProject = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        
-        const response = await client.getEntries<PortfolioProjectSkeleton>({
-          content_type: 'portfolioProjects',
-          'fields.slug': slug,
-          limit: 1
-        } as any);
-        
-        if (response.items.length > 0) {
-          setProject(response.items[0] as PortfolioProject);
-        } else {
-          setError('Project not found');
-        }
-      } catch (err) {
-        console.error('Error fetching project:', err);
-        setError(err instanceof Error ? err.message : 'Failed to fetch project');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (slug) {
-      fetchProject();
-    }
-  }, [slug]);
-
-  return { project, loading, error };
 };

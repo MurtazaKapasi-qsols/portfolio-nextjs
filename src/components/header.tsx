@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { MoveUpRight, Search } from "lucide-react";
+import { MoveUpRight } from "lucide-react";
 import Navigation from "./navigation";
 
 export default function Header() {

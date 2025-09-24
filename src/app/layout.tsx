@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { Unbounded } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
@@ -9,19 +8,8 @@ const unbounded = Unbounded({
   subsets: ["latin"],
 });
 
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
 export const metadata: Metadata = {
-  title: "DEEP - Web Architects",
+  title: "Portfolio App",
   description: "We build your digital future with branding, design, and development services.",
 };
 
