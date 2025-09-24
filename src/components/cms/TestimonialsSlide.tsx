@@ -48,7 +48,17 @@ export default function TestimonialsSlide() {
 
 				<div className="max-w-4xl mx-auto">
 					{/* Client photos */}
-					{hasTestimonials && (
+					{loading && !error && (
+						<p className="text-center text-white/70 mb-8">Loading testimonials...</p>
+					)}
+
+					{error && (
+						<div className="text-center text-red-500 mb-8">
+						<p>Error loading testimonials: {error}</p>
+						{/* Optional retry button if you add a refetch function */}
+						</div>
+					)}
+					{!loading && !error && hasTestimonials && (
 						<motion.div
 							className="flex justify-center space-x-4 mb-12"
 							initial={{ opacity: 0, y: 30 }}
@@ -90,7 +100,7 @@ export default function TestimonialsSlide() {
 					)}
 
 					{/* Testimonial */}
-					{!loading && current && (
+					{!loading && !error && current && (
 						<div className="text-center relative min-h-[300px]">
 							<AnimatePresence mode="wait">
 								<motion.div

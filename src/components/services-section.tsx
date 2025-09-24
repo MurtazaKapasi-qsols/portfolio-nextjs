@@ -20,7 +20,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-20 bg-white md:mx-14 relative overflow-hidden">
+    <section className="py-10 md:py-20 bg-white md:mx-14 relative overflow-hidden">
       {/* Floating decorative elements */}
       
       <div className="container">
@@ -29,7 +29,7 @@ export default function ServicesSection() {
             <div>
               <SectionHeading title="WHAT WE CAN DO FOR YOU" subtitle="OUR SERVICES" isSideHeading={true} />
               
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-gray-600 md:text-lg leading-relaxed">
                 We offer comprehensive digital solutions to help your business thrive 
                 in the modern marketplace. From strategic branding to technical 
                 implementation, we cover every aspect of your digital presence.

@@ -21,7 +21,7 @@ export default function PortfolioGrid({
   category, 
   featured 
 }: PortfolioGridProps) {
-  const { projects, loading } = usePortfolio({
+  const { projects, loading, error } = usePortfolio({
     limit,
     'fields.category': category,
     'fields.featured': featured,
@@ -43,7 +43,7 @@ export default function PortfolioGrid({
         </AnimatedSection>
 			</div>
 
-			{loading ? (
+			{loading && (
 				<div className="columns-1 lg:columns-3 gap-6 max-w-6xl mx-auto">
 					{Array.from({ length: 6 }).map((_, index) => (
 						<div key={index} className="break-inside-avoid mb-6">
@@ -51,8 +51,16 @@ export default function PortfolioGrid({
 						</div>
 					))}
 				</div>
-			) : (
-				<div className="columns-1 lg:columns-3 gap-6 max-w-6xl mx-auto">
+			)}
+
+      {error && (
+        <div className="max-w-6xl mx-auto text-center text-red-600 text-lg py-8">
+          <p>Error loading projects: {error}</p>
+        </div>
+      )}
+      
+      {!loading && !error && (
+				<div className="px-3 columns-1 lg:columns-3 gap-6 max-w-6xl mx-auto">
 					{projects.map((project, index) => (
 						<PortfolioCard 
 							key={project.sys.id} 

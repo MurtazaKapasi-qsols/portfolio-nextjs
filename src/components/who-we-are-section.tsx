@@ -4,7 +4,7 @@ import SectionHeading from "./sectionHeading";
 
 export default function WhoWeAreSection() {
   return (
-    <section className="py-20">
+    <section className="py-10 md:py-20">
       {/* Features Section */}
       <div className="bg-white py-16">
         <div className="container">

@@ -1,5 +1,7 @@
 // Simple smooth scroll utility for anchor links
 export const smoothScrollTo = (elementId: string, offset: number = 80) => {
+  if (typeof window === 'undefined') return;
+
   const element = document.getElementById(elementId);
   if (element) {
     const elementPosition = element.getBoundingClientRect().top;
@@ -14,6 +16,8 @@ export const smoothScrollTo = (elementId: string, offset: number = 80) => {
 
 // Handle anchor link clicks with smooth scroll
 export const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  if (typeof window === 'undefined') return;
+  
   if (href.startsWith('#')) {
     e.preventDefault();
     const elementId = href.substring(1);

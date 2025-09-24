@@ -52,7 +52,7 @@ export default function PartnersSection() {
                     alt={image.alt} 
                     width={image.width} 
                     height={image.height} 
-                    className="w-full h-full object-cover" 
+                    className=" h-full object-cover" 
                   />
                 </motion.div>
               </div>

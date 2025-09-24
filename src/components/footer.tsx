@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
 
+const currentYear = new Date().getFullYear();
+
 export default function Footer() {
   const footerLinks = [
     "HOME", "ABOUT", "SERVICES", "PORTFOLIO", "BLOG", "CONTACT"
   ];
-  const currentYear = new Date().getFullYear();
+  
 
   // Email state & validation
   const [email, setEmail] = useState("");
