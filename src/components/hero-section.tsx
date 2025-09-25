@@ -28,7 +28,7 @@ export default function HeroSection() {
       <div className="container relative z-10 text-center">
         <div className="max-w-4xl mx-auto">
           <motion.h5 
-            className="text-white text-xs md:text-sm font-medium tracking-[4px]"
+            className="text-white text-xs md:text-sm font-medium md:tracking-[1px] tracking-[3px]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -37,7 +37,7 @@ export default function HeroSection() {
           </motion.h5>
           
           <motion.h2 
-            className="text-white text-lg md:text-5xl tracking-[10px] my-14"
+            className="text-white text-xl font-bold md:font-medium md:text-5xl tracking-[3px] md:tracking-[7px] my-14"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
@@ -46,7 +46,7 @@ export default function HeroSection() {
           </motion.h2>
           
           <motion.p 
-            className="text-sm md:text-lg text-white/90 font-light mb-12 tracking-[5px]"
+            className="text-sm md:text-lg text-white/90 font-light mb-12 tracking-[2px] md:tracking-[4px]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
