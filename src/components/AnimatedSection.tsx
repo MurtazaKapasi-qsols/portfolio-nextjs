@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface AnimatedSectionProps {
@@ -35,7 +35,7 @@ export default function AnimatedSection({
       transition: {
         duration,
         delay,
-        ease: "easeOut"
+        ease: easeOut
       }
     }
   };
