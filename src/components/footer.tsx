@@ -47,7 +47,7 @@ export default function Footer() {
       <div className="container">
         {/* Newsletter Section */}
         <div className="text-center mb-12">
-          <p className="text-white text-lg tracking-[6px] mb-2">
+          <p className="text-white text-lg tracking-[2px] md:tracking-[5px] mb-2">
             SUBSCRIBE OUR NEWSLETTER
           </p>
           <p className="text-white/60 text-sm mb-6">
